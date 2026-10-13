@@ -1,5 +1,5 @@
 #pragma once
-#include "GridInfo.h"
+#include "grid_info.h"
 class NeighboursInfo :
 	public GridInfo
 {

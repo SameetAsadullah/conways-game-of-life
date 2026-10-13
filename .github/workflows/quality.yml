@@ -16,10 +16,10 @@ jobs:
         uses: actions/checkout@v5
 
       - name: Compile simulation
-        run: g++ -std=c++17 -Wall -Wextra -pedantic src/Game.cpp -o /tmp/game-of-life
+        run: make
 
       - name: Verify sample input
-        run: test -s src/data.txt
+        run: test -s data/initial-state.txt
 
       - name: Check repository hygiene
         run: |

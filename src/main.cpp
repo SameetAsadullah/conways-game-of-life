@@ -1,4 +1,4 @@
-#include"Game.h"
+#include "game.h"
 
 int main() {
 	int aliveCount = 0, neighboursCount = 0, generations = 0;

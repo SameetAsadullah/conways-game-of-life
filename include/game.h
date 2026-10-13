@@ -1,7 +1,7 @@
 #pragma once
 #include<iostream>
-#include"GridInfo.h"
-#include"NeighboursInfo.h"
+#include "grid_info.h"
+#include "neighbours_info.h"
 #include<fstream>
 #include<string>
 #include<stdlib.h>
@@ -220,7 +220,7 @@ void run(int grid[rows][cols], GridInfo* unInit, NeighboursInfo* aux, int& neigh
 }
 
 void readFromFile(int grid[rows][cols], int& generations, GridInfo* unInit, int& aliveCount) {
-	fstream f("data.txt", ios::in);
+	fstream f("data/initial-state.txt", ios::in);
 
 	if (f) {
 		string a;

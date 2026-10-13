@@ -14,22 +14,21 @@ A C++ console simulation of Conway's Game of Life. The program loads an initial 
 ## Build and run
 
 ```bash
-cd src
-g++ -std=c++17 -O2 Game.cpp -o game-of-life
-./game-of-life
+make
+./build/game-of-life
 ```
 
-Run the executable from `src/` so it can read `data.txt`. The bundled `src/GameOfLife.sln` provides an alternative Windows build configuration.
+Run the executable from the repository root so it can read the bundled initial state.
 
 ## Input format
 
-`src/data.txt` contains:
+`data/initial-state.txt` contains:
 
 1. the number of generations to simulate;
 2. the number of initially live cells;
 3. one `row column` coordinate pair per live cell.
 
-The original implementation uses a `12 x 12` grid. Change `rows` and `cols` in `src/Game.h` to experiment with another size.
+The original implementation uses a `12 x 12` grid. Change `rows` and `cols` in `include/game.h` to experiment with another size.
 
 ```text
 10
@@ -42,10 +41,11 @@ The original implementation uses a `12 x 12` grid. Change `rows` and `cols` in `
 
 ## Source layout
 
-- `Game.cpp` — entry point and generation loop
-- `Game.h` — grid loading, neighbour calculation, and transition rules
-- `GridInfo.h` — live-cell coordinates
-- `NeighboursInfo.h` — neighbour state used during a generation
+- `src/main.cpp` — entry point and generation loop
+- `include/game.h` — grid loading, neighbour calculation, and transition rules
+- `include/grid_info.h` — live-cell coordinates
+- `include/neighbours_info.h` — neighbour state used during a generation
+- `data/initial-state.txt` — sample simulation input
 
 ## Screenshots
 
