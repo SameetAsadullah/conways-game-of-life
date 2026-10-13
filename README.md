@@ -55,4 +55,4 @@ The original implementation uses a `12 x 12` grid. Change `rows` and `cols` in `
 
 ## Project status
 
-This is a preserved university C++ exercise. The original simulation logic remains intact; generated Visual Studio output and vendored package binaries have been removed from the current branch.
+This repository preserves the original C++ cellular-automaton implementation. The simulation logic remains intact; generated Visual Studio output and vendored package binaries have been removed from the current branch.
