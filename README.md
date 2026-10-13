@@ -19,7 +19,7 @@ g++ -std=c++17 -O2 Game.cpp -o game-of-life
 ./game-of-life
 ```
 
-Run the executable from `src/` so it can read `data.txt`. On Windows, `src/GameOfLife.sln` can also be opened in Visual Studio.
+Run the executable from `src/` so it can read `data.txt`. The bundled `src/GameOfLife.sln` provides an alternative Windows build configuration.
 
 ## Input format
 
@@ -55,4 +55,4 @@ The original implementation uses a `12 x 12` grid. Change `rows` and `cols` in `
 
 ## Project status
 
-This repository preserves the original C++ cellular-automaton implementation. The simulation logic remains intact; generated Visual Studio output and vendored package binaries have been removed from the current branch.
+The cellular-automaton logic remains intact, while generated IDE output and vendored package binaries are excluded from the maintained branch.
