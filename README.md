@@ -2,7 +2,7 @@
 
 A C++ console simulation of Conway's Game of Life. The program loads an initial grid from a text file and displays each generation using the standard birth, survival, and death rules.
 
-[![C++ checks](https://github.com/SameetAsadullah/Game-of-Life/actions/workflows/quality.yml/badge.svg)](https://github.com/SameetAsadullah/Game-of-Life/actions/workflows/quality.yml)
+[![C++ checks](https://github.com/SameetAsadullah/conways-game-of-life/actions/workflows/quality.yml/badge.svg)](https://github.com/SameetAsadullah/conways-game-of-life/actions/workflows/quality.yml)
 
 ## Rules implemented
 
