@@ -1,20 +1,58 @@
-<h1 align="center">Game of Life</h1>
+# Conway's Game of Life
 
-### Description
-A simple `Game of Life` coded in `C++ language` using `Microsoft Visual Studio`. It will work on all the inputs that you give and can perform as many generations as you want.
+A C++ console simulation of Conway's Game of Life. The program loads an initial grid from a text file and displays each generation using the standard birth, survival, and death rules.
 
-### Manual
-1) You can give your own `Custom Input` in the file named as `data.txt`. Its format is given below:
-    <div align="center">
-      <img src = "https://github.com/SameetAsadullah/Game-of-Life/blob/main/extras/input-details-ss.png" alt = "" width="600px"/>
-    </div>
+[![C++ checks](https://github.com/SameetAsadullah/Game-of-Life/actions/workflows/quality.yml/badge.svg)](https://github.com/SameetAsadullah/Game-of-Life/actions/workflows/quality.yml)
 
-2) You can `Change Grid Size` in the header file named as `Game.h`:
-    <div align="center">
-      <img src = "https://github.com/SameetAsadullah/Game-of-Life/blob/main/extras/change-grid-size-ss.png" alt = "" width="600px"/>
-    </div>
-    
-### Working Screenshot
-  <div align="center">
-    <img src = "https://github.com/SameetAsadullah/Game-of-Life/blob/main/extras/working-ss.png" alt = "" width="800px"/>
-  </div>
+## Rules implemented
+
+- A live cell with fewer than two live neighbours dies.
+- A live cell with two or three live neighbours survives.
+- A live cell with more than three live neighbours dies.
+- A dead cell with exactly three live neighbours becomes alive.
+
+## Build and run
+
+```bash
+cd src
+g++ -std=c++17 -O2 Game.cpp -o game-of-life
+./game-of-life
+```
+
+Run the executable from `src/` so it can read `data.txt`. On Windows, `src/GameOfLife.sln` can also be opened in Visual Studio.
+
+## Input format
+
+`src/data.txt` contains:
+
+1. the number of generations to simulate;
+2. the number of initially live cells;
+3. one `row column` coordinate pair per live cell.
+
+The original implementation uses a `12 x 12` grid. Change `rows` and `cols` in `src/Game.h` to experiment with another size.
+
+```text
+10
+4
+7 4
+7 5
+7 6
+6 5
+```
+
+## Source layout
+
+- `Game.cpp` — entry point and generation loop
+- `Game.h` — grid loading, neighbour calculation, and transition rules
+- `GridInfo.h` — live-cell coordinates
+- `NeighboursInfo.h` — neighbour state used during a generation
+
+## Screenshots
+
+| Input format | Grid configuration | Simulation |
+|---|---|---|
+| ![Input format](extras/input-details-ss.png) | ![Grid configuration](extras/change-grid-size-ss.png) | ![Simulation output](extras/working-ss.png) |
+
+## Project status
+
+This is a preserved university C++ exercise. The original simulation logic remains intact; generated Visual Studio output and vendored package binaries have been removed from the current branch.
