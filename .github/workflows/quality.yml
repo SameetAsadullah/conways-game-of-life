@@ -1,0 +1,33 @@
+name: C++ checks
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v5
+
+      - name: Compile simulation
+        run: g++ -std=c++17 -Wall -Wextra -pedantic src/Game.cpp -o /tmp/game-of-life
+
+      - name: Verify sample input
+        run: test -s src/data.txt
+
+      - name: Check repository hygiene
+        run: |
+          test ! -d src/.vs
+          test ! -d src/Debug
+          test ! -d src/x64
+          test ! -d src/packages
+          test -z "$(find . -type f \( -name '*.exe' -o -name '*.obj' -o -name '*.pdb' -o -name '*.ipch' \) -print)"
+
+      - name: Check whitespace
+        run: git diff --check
